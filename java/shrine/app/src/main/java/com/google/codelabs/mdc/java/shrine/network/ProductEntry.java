@@ -40,6 +40,15 @@ public class ProductEntry {
         this.description = description;
     }
 
+//    /**
+//     * Gets the title of the sport.
+//     *
+//     * @return The title of the sport.
+//     */
+//    public String getTitle() {
+//        return title;
+//    }
+
     /**
      * Loads a raw JSON at R.raw.products and converts it into a list of ProductEntry objects
      */
