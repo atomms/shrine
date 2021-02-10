@@ -39,34 +39,22 @@ public class ProductCardRecyclerViewAdapter extends RecyclerView.Adapter<Product
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ProductCardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ProductCardViewHolder holder, final int position) {
 
-////                ProductEntry mproductitem = productList.get(getAdapterPosition());
-//
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//
-//
-//
-//            @Override
-//            public void onClick(View view) {
-////                Toast.makeText(view.getContext(), "ueeeeee" + productList.get(getAdapterPosition()), Toast.LENGTH_SHORT).show();
-////                Intent intent = new Intent(view.getContext(), DetailActivity.class);
-////                view.getContext().startActivity(intent);
-//
-////                        intent.putExtra("title", ProductItem.());
-////        detailIntent.putExtra("image_resource",
-////                currentSport.getImageResource());
-//
-////                int itemPosition = getLayoutPosition();
-////                Toast.makeText(context, "" + itemPosition, Toast.LENGTH_SHORT).show();
-////                holder.productTitle.setText(android.get(position).get());
-////                viewHolder.tv_version.setText(android.get(i).getOfferType());
-////                Picasso.with(context).load(android.get(i).getImg()).transform(new CircleTransform()).into(img);
-//
-//            }
-//        });
+        //sending data from selected cardview to activity
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        // TODO: Put ViewHolder binding code here in MDC-102
+                Intent intent = new Intent(view.getContext(), DetailActivity.class);
+                ProductEntry product = productList.get(position);
+                intent.putExtra("titulo", product.title);
+                intent.putExtra("precio", product.price);
+                intent.putExtra("url", product.url);
+                view.getContext().startActivity(intent);
+            }
+        });
+
         if (productList != null && position < productList.size()) {
             ProductEntry product = productList.get(position);
             holder.productTitle.setText(product.title);

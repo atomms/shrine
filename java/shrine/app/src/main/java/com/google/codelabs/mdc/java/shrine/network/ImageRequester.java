@@ -21,7 +21,9 @@ public class ImageRequester {
     private final ImageLoader imageLoader;
     private final int maxByteSize;
 
-    private ImageRequester() {
+
+    //made public for putExtra**
+    public ImageRequester() {
         context = ShrineApplication.getAppContext();
         this.requestQueue = Volley.newRequestQueue(context);
         this.requestQueue.start();
